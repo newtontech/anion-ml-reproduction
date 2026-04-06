@@ -30,3 +30,4 @@ Thumbs.db
 *.log
 .claude/
 image_analysis.csv
+*.pdf
