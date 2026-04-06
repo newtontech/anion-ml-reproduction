@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0D47A1"/>
+      <stop offset="100%" stop-color="#1976D2"/>
+    </linearGradient>
+    <radialGradient id="bgDecor" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#1565C0" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#1565C0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="1280" height="720" fill="url(#bgDecor)"/>
+
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1280" height="8" fill="url(#headerGrad)"/>
+
+  <!-- Decorative elements -->
+  <rect x="80" y="120" width="200" height="200" rx="20" fill="#1565C0" fill-opacity="0.03" transform="rotate(20, 180, 220)"/>
+  <rect x="1000" y="400" width="180" height="180" rx="16" fill="#1565C0" fill-opacity="0.04" transform="rotate(-15, 1090, 490)"/>
+  <circle cx="200" cy="550" r="100" fill="#1565C0" fill-opacity="0.02"/>
+  <circle cx="1100" cy="200" r="120" fill="#1565C0" fill-opacity="0.02"/>
+
+  <!-- Main content -->
+  <text x="640" y="280" text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="56" fill="#0D47A1" font-weight="bold">Thank You</text>
+
+  <!-- Divider -->
+  <line x1="480" y1="310" x2="800" y2="310" stroke="#1565C0" stroke-width="3" stroke-opacity="0.4"/>
+
+  <!-- Subtitle -->
+  <text x="640" y="360" text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="26" fill="#5D6D7E">Questions &amp; Discussion</text>
+
+  <!-- Paper reference -->
+  <rect x="340" y="420" width="600" height="80" rx="10" fill="#F5F7FA" stroke="#DCE1E8" stroke-width="1"/>
+  <text x="640" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#2C3E50">Xu, J. et al. Nat. Mater. 22, 1507–1514 (2023)</text>
+  <text x="640" y="478" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1565C0">DOI: 10.1038/s41563-023-01705-y</text>
+
+  <!-- Repo info -->
+  <text x="640" y="540" text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#5D6D7E">Reproduction repository: anion-paper/</text>
+  <text x="640" y="570" text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#95A5A6">8 Jupyter Notebooks | 4 Source Modules | 13 Publication Figures</text>
+
+  <!-- Date -->
+  <text x="640" y="640" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#95A5A6">2026-04-06</text>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="712" width="1280" height="8" fill="url(#headerGrad)"/>
+</svg>
