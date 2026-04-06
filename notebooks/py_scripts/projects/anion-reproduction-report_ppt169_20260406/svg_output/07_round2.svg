@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0D47A1"/>
+      <stop offset="100%" stop-color="#1976D2"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="4" result="offsetBlur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.10"/>
+      <feComposite in2="offsetBlur" operator="in" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1280" height="60" fill="url(#headerGrad)"/>
+  <text x="60" y="38" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold">Round 2: 5 Models with 4 Features</text>
+
+  <!-- Takeaway -->
+  <rect x="60" y="78" width="1160" height="42" rx="6" fill="#27AE60" fill-opacity="0.06"/>
+  <text x="80" y="104" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#27AE60">GB &amp; XGBoost reach AUC = 0.92 with only 4 features; GB achieves best accuracy (0.95)</text>
+
+  <!-- Results Table -->
+  <g id="results-table">
+    <rect x="60" y="140" width="700" height="240" rx="10" fill="#FFFFFF" stroke="#DCE1E8" stroke-width="1" filter="url(#cardShadow)"/>
+
+    <!-- Table header -->
+    <rect x="60" y="140" width="700" height="36" rx="10" fill="#27AE60"/>
+    <rect x="60" y="160" width="700" height="16" fill="#27AE60"/>
+    <text x="140" y="164" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#FFFFFF" font-weight="bold">Model</text>
+    <text x="440" y="164" text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#FFFFFF" font-weight="bold">AUC</text>
+    <text x="580" y="164" text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#FFFFFF" font-weight="bold">Accuracy</text>
+    <text x="710" y="164" text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#FFFFFF" font-weight="bold">vs Paper</text>
+
+    <!-- Row 1 - GB (best AUC) -->
+    <rect x="60" y="176" width="700" height="40" fill="#27AE60" fill-opacity="0.06"/>
+    <text x="140" y="201" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#2C3E50" font-weight="bold">Gradient Boosting</text>
+    <text x="440" y="201" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#27AE60" font-weight="bold">0.9161</text>
+    <text x="580" y="201" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#27AE60" font-weight="bold">0.9512</text>
+    <text x="710" y="201" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#27AE60" font-weight="bold">▲</text>
+
+    <!-- Row 2 - XGBoost -->
+    <rect x="60" y="216" width="700" height="40" fill="#FFFFFF"/>
+    <text x="140" y="241" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#2C3E50">XGBoost</text>
+    <text x="440" y="241" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#2C3E50">0.9161</text>
+    <text x="580" y="241" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#2C3E50">0.9024</text>
+    <text x="710" y="241" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#27AE60" font-weight="bold">▲</text>
+
+    <!-- Row 3 - RF -->
+    <rect x="60" y="256" width="700" height="40" fill="#F5F7FA"/>
+    <text x="140" y="281" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#2C3E50">Random Forest</text>
+    <text x="440" y="281" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#2C3E50">0.8984</text>
+    <text x="580" y="281" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#2C3E50">0.9024</text>
+    <text x="710" y="281" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#5D6D7E">≈</text>
+
+    <!-- Row 4 - LR -->
+    <rect x="60" y="296" width="700" height="40" fill="#FFFFFF"/>
+    <text x="140" y="321" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#2C3E50">Logistic Regression</text>
+    <text x="440" y="321" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#2C3E50">0.8452</text>
+    <text x="580" y="321" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#2C3E50">0.8537</text>
+    <text x="710" y="321" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#5D6D7E">≈</text>
+
+    <!-- Row 5 - SVC -->
+    <rect x="60" y="336" width="700" height="40" rx="0" fill="#F5F7FA"/>
+    <rect x="60" y="360" width="700" height="20" rx="10" fill="#F5F7FA"/>
+    <text x="140" y="361" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#2C3E50">SVC (RBF)</text>
+    <text x="440" y="361" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#2C3E50">0.7645</text>
+    <text x="580" y="361" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#2C3E50">0.8780</text>
+    <text x="710" y="361" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#5D6D7E">↓</text>
+  </g>
+
+  <!-- CV & Paper Comparison -->
+  <rect x="790" y="140" width="430" height="110" rx="10" fill="#FFFFFF" stroke="#27AE60" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <text x="1005" y="170" text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#5D6D7E">Random Forest 10-fold CV (4 Features)</text>
+  <text x="1005" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#27AE60" font-weight="bold">0.7817 ± 0.0679</text>
+  <text x="1005" y="238" text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#5D6D7E">Our AUC vs Paper: 0.87 ± 0.06</text>
+
+  <!-- Feature set indicator -->
+  <rect x="790" y="270" width="430" height="70" rx="10" fill="#F5F7FA" stroke="#DCE1E8" stroke-width="1"/>
+  <text x="1005" y="298" text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#2C3E50" font-weight="bold">4 Features Selected:</text>
+  <rect x="835" y="310" width="70" height="24" rx="12" fill="#E74C3C" fill-opacity="0.15"/>
+  <text x="870" y="327" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E74C3C" font-weight="bold">num_O</text>
+  <rect x="915" y="310" width="70" height="24" rx="12" fill="#3498DB" fill-opacity="0.15"/>
+  <text x="950" y="327" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#3498DB" font-weight="bold">TPSA</text>
+  <rect x="995" y="310" width="55" height="24" rx="12" fill="#27AE60" fill-opacity="0.15"/>
+  <text x="1022" y="327" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#27AE60" font-weight="bold">HBA</text>
+  <rect x="1060" y="310" width="70" height="24" rx="12" fill="#F39C12" fill-opacity="0.15"/>
+  <text x="1095" y="327" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#F39C12" font-weight="bold">HOMO</text>
+
+  <!-- AUC Bar chart -->
+  <g id="auc-bars-r2">
+    <rect x="790" y="360" width="430" height="200" rx="10" fill="#F5F7FA" stroke="#DCE1E8" stroke-width="1"/>
+    <text x="1005" y="386" text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#2C3E50" font-weight="bold">AUC Comparison (4 Features)</text>
+
+    <!-- Bars -->
+    <rect x="810" y="402" width="60" height="92" rx="3" fill="#27AE60"/>
+    <text x="840" y="396" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#27AE60" font-weight="bold">0.92</text>
+    <text x="840" y="506" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5D6D7E">GB</text>
+
+    <rect x="885" y="402" width="60" height="92" rx="3" fill="#27AE60" fill-opacity="0.8"/>
+    <text x="915" y="396" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#27AE60" font-weight="bold">0.92</text>
+    <text x="915" y="506" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5D6D7E">XGB</text>
+
+    <rect x="960" y="410" width="60" height="84" rx="3" fill="#27AE60" fill-opacity="0.6"/>
+    <text x="990" y="404" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#27AE60">0.90</text>
+    <text x="990" y="506" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5D6D7E">RF</text>
+
+    <rect x="1035" y="440" width="60" height="54" rx="3" fill="#27AE60" fill-opacity="0.4"/>
+    <text x="1065" y="434" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#27AE60">0.85</text>
+    <text x="1065" y="506" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5D6D7E">LR</text>
+
+    <rect x="1110" y="468" width="60" height="26" rx="3" fill="#27AE60" fill-opacity="0.3"/>
+    <text x="1140" y="462" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#27AE60">0.76</text>
+    <text x="1140" y="506" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5D6D7E">SVC</text>
+
+    <line x1="805" y1="494" x2="1175" y2="494" stroke="#DCE1E8" stroke-width="1"/>
+    <!-- Paper baseline -->
+    <line x1="805" y1="426" x2="1175" y2="426" stroke="#E74C3C" stroke-width="1" stroke-dasharray="4,4"/>
+    <text x="1170" y="422" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#E74C3C">Paper RF: 0.87</text>
+  </g>
+
+  <!-- ROC Curves -->
+  <rect x="60" y="400" width="700" height="280" rx="10" fill="#F5F7FA" stroke="#DCE1E8" stroke-width="1"/>
+  <text x="410" y="426" text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#2C3E50" font-weight="bold">ROC Curves — Round 2 (4 Features)</text>
+  <image href="../images/roc_curves_r2.png" x="90" y="438" width="640" height="228" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- Footer -->
+  <text x="60" y="700" font-family="Arial, sans-serif" font-size="11" fill="#95A5A6">Source: 85/15 stratified split, scikit-learn models, random_state=42</text>
+  <text x="1220" y="700" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#95A5A6">07</text>
+</svg>

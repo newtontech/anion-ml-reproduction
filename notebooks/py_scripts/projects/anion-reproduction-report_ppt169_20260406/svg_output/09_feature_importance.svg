@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0D47A1"/>
+      <stop offset="100%" stop-color="#1976D2"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="4" result="offsetBlur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.10"/>
+      <feComposite in2="offsetBlur" operator="in" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1280" height="60" fill="url(#headerGrad)"/>
+  <text x="60" y="38" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold">Feature Importance Analysis (Round 2)</text>
+
+  <!-- Takeaway -->
+  <rect x="60" y="78" width="1160" height="42" rx="6" fill="#1565C0" fill-opacity="0.06"/>
+  <text x="80" y="104" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#1565C0">RF and LR agree: num_O and TPSA are the two most influential features for predicting Eb</text>
+
+  <!-- Left: RF Feature Importance -->
+  <rect x="60" y="140" width="580" height="320" rx="10" fill="#F5F7FA" stroke="#DCE1E8" stroke-width="1"/>
+  <text x="350" y="170" text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#2C3E50" font-weight="bold">Random Forest Feature Importance</text>
+  <image href="../images/feature_importance_top4.png" x="90" y="185" width="520" height="260" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- Right: LR Coefficients -->
+  <rect x="660" y="140" width="560" height="320" rx="10" fill="#F5F7FA" stroke="#DCE1E8" stroke-width="1"/>
+  <text x="940" y="170" text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#2C3E50" font-weight="bold">Logistic Regression Coefficients</text>
+  <image href="../images/lr_coefficients_r2.png" x="690" y="185" width="500" height="260" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- Interpretation summary -->
+  <rect x="60" y="480" width="1160" height="190" rx="10" fill="#FFFFFF" stroke="#DCE1E8" stroke-width="1" filter="url(#cardShadow)"/>
+  <text x="100" y="512" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#1565C0" font-weight="bold">Key Observations</text>
+  <line x1="100" y1="522" x2="1180" y2="522" stroke="#DCE1E8" stroke-width="1"/>
+
+  <!-- Observation cards in 2x2 grid -->
+  <!-- Row 1 -->
+  <rect x="80" y="535" width="540" height="55" rx="8" fill="#E74C3C" fill-opacity="0.05"/>
+  <circle cx="106" cy="562" r="12" fill="#E74C3C"/>
+  <text x="106" y="567" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#FFFFFF" font-weight="bold">1</text>
+  <text x="128" y="558" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#2C3E50" font-weight="bold">num_O &amp; TPSA dominate both models</text>
+  <text x="128" y="578" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#5D6D7E">Consistent top-2 ranking across RF importance and LR |coefficients|</text>
+
+  <rect x="640" y="535" width="560" height="55" rx="8" fill="#27AE60" fill-opacity="0.05"/>
+  <circle cx="666" cy="562" r="12" fill="#27AE60"/>
+  <text x="666" y="567" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#FFFFFF" font-weight="bold">2</text>
+  <text x="688" y="558" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#2C3E50" font-weight="bold">HOMO is negative (inverse) predictor</text>
+  <text x="688" y="578" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#5D6D7E">Lower HOMO energy → stronger binding (higher electronegativity)</text>
+
+  <!-- Row 2 -->
+  <rect x="80" y="600" width="540" height="55" rx="8" fill="#3498DB" fill-opacity="0.05"/>
+  <circle cx="106" cy="627" r="12" fill="#3498DB"/>
+  <text x="106" y="632" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#FFFFFF" font-weight="bold">3</text>
+  <text x="128" y="623" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#2C3E50" font-weight="bold">num_O &amp; HBA positively correlated with Eb</text>
+  <text x="128" y="643" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#5D6D7E">More O atoms and H-bond acceptors → more coordination with Pb²⁺</text>
+
+  <rect x="640" y="600" width="560" height="55" rx="8" fill="#F39C12" fill-opacity="0.05"/>
+  <circle cx="666" cy="627" r="12" fill="#F39C12"/>
+  <text x="666" y="632" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#FFFFFF" font-weight="bold">4</text>
+  <text x="688" y="623" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#2C3E50" font-weight="bold">TPSA is strong positive predictor</text>
+  <text x="688" y="643" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#5D6D7E">Larger polar surface → more hydrogen bonding → stronger binding</text>
+
+  <!-- Footer -->
+  <text x="60" y="700" font-family="Arial, sans-serif" font-size="11" fill="#95A5A6">Source: RF importance (Gini) + LR coefficients (L2 regularization, C=1.0)</text>
+  <text x="1220" y="700" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#95A5A6">09</text>
+</svg>

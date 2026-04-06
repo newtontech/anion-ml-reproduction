@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0D47A1"/>
+      <stop offset="100%" stop-color="#1976D2"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1280" height="60" fill="url(#headerGrad)"/>
+  <text x="60" y="38" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold">ROC Curve Comparison: Round 1 vs Round 2</text>
+
+  <!-- Takeaway -->
+  <rect x="60" y="78" width="1160" height="42" rx="6" fill="#1565C0" fill-opacity="0.06"/>
+  <text x="80" y="104" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#1565C0">4-feature models maintain strong discriminative performance despite 76% feature reduction</text>
+
+  <!-- Full-width ROC comparison image -->
+  <rect x="60" y="135" width="1160" height="520" rx="10" fill="#F5F7FA" stroke="#DCE1E8" stroke-width="1"/>
+  <image href="../images/roc_comparison.png" x="80" y="145" width="1120" height="500" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- Labels overlay -->
+  <rect x="90" y="580" width="200" height="28" rx="6" fill="#1565C0" fill-opacity="0.9"/>
+  <text x="190" y="599" text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#FFFFFF" font-weight="bold">Left: 17 Features</text>
+
+  <rect x="990" y="580" width="200" height="28" rx="6" fill="#E74C3C" fill-opacity="0.9"/>
+  <text x="1090" y="599" text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#FFFFFF" font-weight="bold">Right: 4 Features</text>
+
+  <!-- Footer -->
+  <text x="60" y="700" font-family="Arial, sans-serif" font-size="11" fill="#95A5A6">Source: All 5 classification models, 85/15 stratified split</text>
+  <text x="1220" y="700" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#95A5A6">08</text>
+</svg>

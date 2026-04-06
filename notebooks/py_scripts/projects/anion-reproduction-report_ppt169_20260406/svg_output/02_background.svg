@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0D47A1"/>
+      <stop offset="100%" stop-color="#1976D2"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="4" result="offsetBlur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.10"/>
+      <feComposite in2="offsetBlur" operator="in" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+
+  <!-- Header bar -->
+  <rect x="0" y="0" width="1280" height="60" fill="url(#headerGrad)"/>
+  <text x="60" y="38" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold">Research Background</text>
+  <rect x="0" y="60" width="1280" height="3" fill="#1565C0" fill-opacity="0.3"/>
+
+  <!-- Takeaway box -->
+  <rect x="60" y="78" width="1160" height="42" rx="6" fill="#1565C0" fill-opacity="0.06"/>
+  <text x="80" y="104" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#1565C0">Key insight: ML-driven screening of pseudo-halide anions achieves ROC AUC = 0.87 ± 0.06 with only 4 molecular features</text>
+
+  <!-- Left column: Key info cards -->
+  <g id="left-info">
+    <!-- Card 1: Paper -->
+    <rect x="60" y="140" width="540" height="100" rx="10" fill="#FFFFFF" stroke="#DCE1E8" stroke-width="1" filter="url(#cardShadow)"/>
+    <rect x="60" y="140" width="6" height="100" rx="3" fill="#1565C0"/>
+    <text x="86" y="172" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#1565C0" font-weight="bold">Paper</text>
+    <text x="86" y="198" font-family="Arial, sans-serif" font-size="14" fill="#2C3E50">Xu, J. et al. Anion optimization for bifunctional surface passivation</text>
+    <text x="86" y="218" font-family="Arial, sans-serif" font-size="13" fill="#5D6D7E">in perovskite solar cells. Nature Materials 22, 1507-1514 (2023)</text>
+
+    <!-- Card 2: Objective -->
+    <rect x="60" y="256" width="540" height="100" rx="10" fill="#FFFFFF" stroke="#DCE1E8" stroke-width="1" filter="url(#cardShadow)"/>
+    <rect x="60" y="256" width="6" height="100" rx="3" fill="#E74C3C"/>
+    <text x="86" y="288" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#E74C3C" font-weight="bold">Objective</text>
+    <text x="86" y="314" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#2C3E50">Screen pseudo-halide (PH) anions for perovskite surface passivation</text>
+    <text x="86" y="334" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#5D6D7E">using ML classification to predict high/low binding energy (Eb)</text>
+
+    <!-- Card 3: Dataset -->
+    <rect x="60" y="372" width="540" height="100" rx="10" fill="#FFFFFF" stroke="#DCE1E8" stroke-width="1" filter="url(#cardShadow)"/>
+    <rect x="60" y="372" width="6" height="100" rx="3" fill="#27AE60"/>
+    <text x="86" y="404" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#27AE60" font-weight="bold">Dataset</text>
+    <text x="86" y="430" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#2C3E50">267 PH anions × 19 molecular features</text>
+    <text x="86" y="450" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#5D6D7E">DFT binding energies on FA₀.₇₅MA₀.₂₅PbI₃ surfaces</text>
+
+    <!-- Card 4: Target -->
+    <rect x="60" y="488" width="540" height="80" rx="10" fill="#FFFFFF" stroke="#DCE1E8" stroke-width="1" filter="url(#cardShadow)"/>
+    <rect x="60" y="488" width="6" height="80" rx="3" fill="#F39C12"/>
+    <text x="86" y="518" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#F39C12" font-weight="bold">Target Variable</text>
+    <text x="86" y="544" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#2C3E50">Binary: High Eb (>3 eV) = 1 (75.3%) vs Low Eb (≤3 eV) = 0 (24.7%)</text>
+  </g>
+
+  <!-- Right column: ML Workflow diagram -->
+  <g id="right-workflow">
+    <rect x="630" y="140" width="590" height="428" rx="12" fill="#F5F7FA" stroke="#DCE1E8" stroke-width="1"/>
+    <text x="925" y="172" text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" fill="#1565C0" font-weight="bold">ML Workflow Pipeline</text>
+
+    <!-- Step 1 -->
+    <rect x="670" y="192" width="510" height="52" rx="8" fill="#FFFFFF" stroke="#1565C0" stroke-width="1.5"/>
+    <circle cx="698" cy="218" r="14" fill="#1565C0"/>
+    <text x="698" y="223" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#FFFFFF" font-weight="bold">1</text>
+    <text x="724" y="223" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#2C3E50">Load 267 samples × 19 features from DFT</text>
+
+    <!-- Arrow -->
+    <line x1="925" y1="244" x2="925" y2="262" stroke="#1565C0" stroke-width="2"/>
+    <polygon points="925,270 920,262 930,262" fill="#1565C0"/>
+
+    <!-- Step 2 -->
+    <rect x="670" y="270" width="510" height="52" rx="8" fill="#FFFFFF" stroke="#1565C0" stroke-width="1.5"/>
+    <circle cx="698" cy="296" r="14" fill="#1565C0"/>
+    <text x="698" y="301" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#FFFFFF" font-weight="bold">2</text>
+    <text x="724" y="301" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#2C3E50">Remove MPI, La → 17 features (Round 1)</text>
+
+    <!-- Arrow -->
+    <line x1="925" y1="322" x2="925" y2="340" stroke="#1565C0" stroke-width="2"/>
+    <polygon points="925,348 920,340 930,340" fill="#1565C0"/>
+
+    <!-- Step 3 -->
+    <rect x="670" y="348" width="510" height="52" rx="8" fill="#FFFFFF" stroke="#1565C0" stroke-width="1.5"/>
+    <circle cx="698" cy="374" r="14" fill="#1565C0"/>
+    <text x="698" y="379" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#FFFFFF" font-weight="bold">3</text>
+    <text x="724" y="379" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#2C3E50">Train 5 classifiers, identify top 4 features</text>
+
+    <!-- Arrow -->
+    <line x1="925" y1="400" x2="925" y2="418" stroke="#1565C0" stroke-width="2"/>
+    <polygon points="925,426 920,418 930,418" fill="#1565C0"/>
+
+    <!-- Step 4 -->
+    <rect x="670" y="426" width="510" height="52" rx="8" fill="#FFFFFF" stroke="#1565C0" stroke-width="1.5"/>
+    <circle cx="698" cy="452" r="14" fill="#E74C3C"/>
+    <text x="698" y="457" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#FFFFFF" font-weight="bold">4</text>
+    <text x="724" y="457" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#2C3E50">Retrain with num_O, TPSA, HBA, HOMO (Round 2)</text>
+
+    <!-- Arrow -->
+    <line x1="925" y1="478" x2="925" y2="496" stroke="#E74C3C" stroke-width="2"/>
+    <polygon points="925,504 920,496 930,496" fill="#E74C3C"/>
+
+    <!-- Step 5 -->
+    <rect x="670" y="504" width="510" height="52" rx="8" fill="#E74C3C" fill-opacity="0.08" stroke="#E74C3C" stroke-width="1.5"/>
+    <circle cx="698" cy="530" r="14" fill="#E74C3C"/>
+    <text x="698" y="535" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#FFFFFF" font-weight="bold">5</text>
+    <text x="724" y="535" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#E74C3C" font-weight="bold">Result: ROC AUC = 0.87 ± 0.06 ✓</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="60" y="700" font-family="Arial, sans-serif" font-size="11" fill="#95A5A6">Source: Xu et al., Nat. Mater. 22, 1507-1514 (2023) | DOI: 10.1038/s41563-023-01705-y</text>
+  <text x="1220" y="700" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#95A5A6">02</text>
+</svg>
